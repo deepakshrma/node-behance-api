@@ -1,0 +1,13 @@
+{
+  "name": "node-behance-api",
+  "version": "0.0.1",
+  "description": "node utility for dev behance apis",
+  "main": "behanceapi.js",
+  "author": "deepak.m.shrma@gmail.com",
+  "license": "GPLv3",
+  "dependencies": {
+    "extend": "^2.0.0",
+    "request": "^2.45.0"
+  },
+  "devDependencies": {}
+}

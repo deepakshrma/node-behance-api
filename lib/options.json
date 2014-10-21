@@ -1,0 +1,19 @@
+{
+    "projects": {
+        "url": "projects",
+        "params": {
+            "q": false,
+            "sort": false,
+            "time": false,
+            "field": false,
+            "country": false,
+            "state": false,
+            "city": false,
+            "page": false,
+            "tags": false,
+            "color_hex": false,
+            "color_range": false
+        }
+    },
+    "projects_by_id": {}
+}
