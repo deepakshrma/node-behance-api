@@ -17,7 +17,7 @@ https://www.npmjs.org/package/request
 #Examples:
 
 ``` javascript
-var Behance = require("./index");
+var Behance = require("node-behance-api");
 var behance = new Behance({"client_id": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxx"})
 Behance.initOptions();
 behance.get('GET', Behance.APIS.USERS, {country: "pakistan"}, function (error, result) {
@@ -29,7 +29,7 @@ behance.get('GET', Behance.APIS.USERS, {country: "pakistan"}, function (error, r
 ```
 #Integration of another API's node-behance-api
 ``` javascript
-var Behance = require("./index");
+var Behance = require("node-behance-api");
 var behance = new Behance({"client_id": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxx"})
 Behance.initOptions({
     postProcess: function (options) {
