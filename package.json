@@ -1,6 +1,6 @@
 {
     "name": "node-behance-api",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "node utility for dev behance apis",
     "main": "behanceapi.js",
     "author": "deepak.m.shrma@gmail.com",
