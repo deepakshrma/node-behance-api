@@ -18,7 +18,7 @@ https://www.npmjs.org/package/request
 
 ``` javascript
 var Behance = require("./index");
-var behance = new Behance({"client_id": "8kTASYLumlKK5wAcP02A2Rmc2NFKcfyj"})
+var behance = new Behance({"client_id": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxx"})
 Behance.initOptions();
 behance.get('GET', Behance.APIS.USERS, {country: "pakistan"}, function (error, result) {
     if (error)
@@ -30,7 +30,7 @@ behance.get('GET', Behance.APIS.USERS, {country: "pakistan"}, function (error, r
 #Integration of another API's node-behance-api
 ``` javascript
 var Behance = require("./index");
-var behance = new Behance({"client_id": "8kTASYLumlKK5wAcP02A2Rmc2NFKcfyj"})
+var behance = new Behance({"client_id": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxx"})
 Behance.initOptions({
     postProcess: function (options) {
         var newapis = {
