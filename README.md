@@ -20,9 +20,9 @@ https://www.npmjs.org/package/request
 var Behance = require("node-behance-api");
 var behance = new Behance({"client_id": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxx"})
 Behance.initOptions();
-behance.get('GET', Behance.APIS.USERS, {country: "pakistan"}, function (error, result) {
+behance.get('GET', Behance.APIS.GET_WIP_REVISION_COMMENTS, {wip_id: "abc", revision_id: "1245", page: "2"}, function (error, result) {
     if (error)
-        console.log(error.message)
+        console.log(error)
     else
         console.log(result)
 })
@@ -57,9 +57,9 @@ Behance.initOptions({
         return options;
     }
 });
-behance.get('GET', Behance.APIS.USERS, {country: "pakistan"}, function (error, result) {
+behance.get('GET', Behance.APIS.GET_WIP_REVISION_COMMENTS, {wip_id: "abc", revision_id: "1245", page: "2"}, function (error, result) {
     if (error)
-        console.log(error.message)
+        console.log(error)
     else
         console.log(result)
 })
