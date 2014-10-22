@@ -12,10 +12,209 @@
             "state": false,
             "city": false,
             "page": false,
+            "tags": false
+        }
+    },
+    "user": {
+        "name": "user",
+        "url": "users/{user}",
+        "params": {
+            "client_id": true,
+            "user": true
+        }
+    },
+    "user_products": {
+        "name": "user_products",
+        "url": "users/{user}/projects",
+        "params": {
+            "client_id": true,
+            "user": true,
+            "sort": false,
+            "time": false,
+            "page": false
+        }
+    },
+    "user_wips": {
+        "name": "user_wips",
+        "url": "users/{user}/wips",
+        "params": {
+            "client_id": true,
+            "user": true,
+            "sort": false,
+            "time": false,
+            "page": false
+        }
+    },
+    "user_appreciations": {
+        "name": "user_appreciations",
+        "url": "users/{user}/appreciations",
+        "params": {
+            "client_id": true,
+            "user": true,
+            "page": false
+        }
+    },
+    "user_collections": {
+        "name": "user_collections",
+        "url": "users/{user}/collections",
+        "params": {
+            "client_id": true,
+            "user": true,
+            "sort": false,
+            "time": false,
+            "page": false
+        }
+    },
+    "user_stats": {
+        "name": "user_stats",
+        "url": "users/{user}/stats",
+        "params": {
+            "client_id": true,
+            "user": true
+        }
+    },
+    "user_followers": {
+        "name": "user_followers",
+        "url": "users/{user}/followers",
+        "params": {
+            "client_id": true,
+            "user": true,
+            "sort": false,
+            "sort_order": false,
+            "page": false,
+            "per_page": false
+        }
+    },
+    "user_following": {
+        "name": "user_following",
+        "url": "users/{user}/following",
+        "params": {
+            "client_id": true,
+            "user": true,
+            "sort": false,
+            "sort_order": false,
+            "page": false,
+            "per_page": false
+        }
+    },
+    "user_feedback": {
+        "name": "user_feedback",
+        "url": "users/{user}/feedback",
+        "params": {
+            "client_id": true,
+            "user": true
+        }
+    },
+    "user_work_experience": {
+        "name": "user_work_experience",
+        "url": "users/{user}/work_experience",
+        "params": {
+            "client_id": true,
+            "user": true
+        }
+    },
+    "projects": {
+        "name": "projects",
+        "url": "projects",
+        "params": {
+            "client_id": true,
+            "q": false,
+            "sort": false,
+            "time": false,
+            "field": false,
+            "country": false,
+            "state": false,
+            "city": false,
+            "page": false,
             "tags": false,
             "color_hex": false,
             "color_range": false
         }
     },
-    "projects_by_id": {}
+    "project": {
+        "name": "project",
+        "url": "projects/{project_id}",
+        "params": {
+            "client_id": true,
+            "project_id": true
+        }
+    },
+    "project_comments": {
+        "name": "project_comments",
+        "url": "projects/{project_id}/comments",
+        "params": {
+            "client_id": true,
+            "project_id": true,
+            "page": true
+        }
+    },
+    "collections": {
+        "name": "collections",
+        "url": "collections",
+        "params": {
+            "client_id": true,
+            "collection_id": true,
+            "q": false,
+            "sort": false,
+            "time": false,
+            "page": false
+        }
+    },
+    "collection": {
+        "name": "collection",
+        "url": "collections/{collection_id}",
+        "params": {
+            "client_id": true,
+            "collection_id": true
+        }
+    },
+    "collection_projects": {
+        "name": "collection_projects",
+        "url": "collections/{collection_id}/projects",
+        "params": {
+            "client_id": true,
+            "collection_id": true,
+            "page": false,
+            "time": false
+        }
+    },
+    "wips": {
+        "name": "wips",
+        "url": "wips",
+        "params": {
+            "client_id": true,
+            "collection_id": true,
+            "q": false,
+            "sort": false,
+            "time": false,
+            "page": false
+        }
+    },
+    "wip_revision": {
+        "name": "wip_revision",
+        "url": "wips/{wip_id}/{revision_id}",
+        "params": {
+            "client_id": true,
+            "wip_id": true,
+            "revision_id": true
+        }
+    },
+    "wip_revision_comments": {
+        "name": "wip_revision_comments",
+        "url": "wips/{wip_id}/{revision_id}/comments",
+        "params": {
+            "client_id": true,
+            "wip_id": true,
+            "revision_id": true,
+            "page": false
+        }
+    },
+    "wip": {
+        "name": "wip",
+        "url": "wips/{wip_id}",
+        "params": {
+            "client_id": true,
+            "wip_id": true
+        }
+    }
 }
