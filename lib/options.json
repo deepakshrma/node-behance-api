@@ -1,7 +1,9 @@
 {
-    "projects": {
-        "url": "projects",
+    "users": {
+        "name": "users",
+        "url": "users",
         "params": {
+            "client_id": true,
             "q": false,
             "sort": false,
             "time": false,
