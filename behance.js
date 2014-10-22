@@ -41,7 +41,6 @@ Behance.prototype.get = function (method, api, opts, done) {
         throw  new Error(MESSAGES.NO_API_DETAILS_AVAIL + " " + api)
     var finalApiData = _helpers.parseOptions(currentApiData, opt.params)
     var uri = this.apiUrl + "/" + (finalApiData.url !== '' ? finalApiData.url + "/" : "") + finalApiData.options + (finalApiData.options === '' ? "?" : "&") + "client_id=" + this.client_id;
-    console.log(">>>>>>>>>>>>>>>>>>>>", uri)
     request(
         {
             method: method,
