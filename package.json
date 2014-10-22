@@ -1,12 +1,41 @@
 {
     "name": "node-behance-api",
     "version": "1.0.2",
-    "description": "node utility for dev behance apis",
+    "description": "a node utility for adobe behance apis",
+    "homepage": "https://github.com/deepakshrma/node-behance-api",
+    "keywords": [
+        "util",
+        "behance",
+        "server",
+        "adobe",
+        "api"
+    ],
+    "author": {
+        "name": "Deepak Vishwakarma",
+        "email": "deepak.m.shrma@gmail.com"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/deepakshrma/node-behance-api"
+    },
     "main": "behanceapi.js",
-    "author": "deepak.m.shrma@gmail.com",
-    "license": "GPLv3",
     "dependencies": {
         "request": "^2.45.0"
     },
+    "licenses": [
+        {
+            "type": "GPLv3",
+            "url": "https://github.com/deepakshrma/node-behance-api/blob/master/LICENSE"
+        }
+    ],
+    "bugs": {
+        "url": "https://github.com/deepakshrma/node-behance-api/issues"
+    },
+    "maintainers": [
+        {
+            "name": "deepakvishwakarma",
+            "email": "deepak.m.shrma@gmail.com"
+        }
+    ],
     "devDependencies": {}
 }
