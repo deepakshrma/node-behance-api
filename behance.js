@@ -1,5 +1,5 @@
 /**
- * Created by intelligrape on 21/10/14.
+ * Created by deepak.m.shrma@gmail.com on 21/10/14.
  */
 var request = require('request'),
     _behanceApiUrl = "http://www.behance.net/v2/",
