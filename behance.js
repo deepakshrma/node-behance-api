@@ -26,24 +26,36 @@ Behance.initOptions = function (options) {
         });
     });
 };
-Behance.prototype.get = function (method, api, opts, done) {
-    if (method !== METHODS.GET)
-        throw  new Error(MESSAGES.NO_API_SUPPORT + " " + method)
-    var opt = _helpers.getOptions(opts, done);
+Behance.prototype.get = function () {
+    var _apiName, _params, _callback;
+    if (arguments.length < 1)
+        throw  new Error(MESSAGES.NO_CALLBACK_DEFINED)
+    if (typeof arguments[0] === "string") {
+        _apiName = arguments[0];
+        _params = arguments[1];
+    }
+    if (typeof arguments[0] === "object") {
+        _params = arguments[0]['params'];
+        _apiName = arguments[0]['api']
+        if (!_apiName)
+            throw  new Error(MESSAGES.API_NAME_NOT_GIVEN)
+    }
+
+    var opt = _helpers.getOptions(_params, arguments[2]);
     var done = opt.done;
     if (!done)
         throw  new Error(MESSAGES.NO_CALLBACK_DEFINED)
     var apiDatas = global._apiOptions;
     if (!apiDatas)
         throw  new Error(MESSAGES.NO_CONFIG_INIT)
-    var currentApiData = apiDatas[api];
+    var currentApiData = apiDatas[_apiName];
     if (!currentApiData)
         throw  new Error(MESSAGES.NO_API_DETAILS_AVAIL + " " + api)
     var finalApiData = _helpers.parseOptions(currentApiData, opt.params)
     var uri = this.apiUrl + "/" + (finalApiData.url !== '' ? finalApiData.url + "/" : "") + finalApiData.options + (finalApiData.options === '' ? "?" : "&") + "client_id=" + this.client_id;
     request(
         {
-            method: method,
+            method: METHODS.GET,
             uri: uri
         }
         , function (error, response, body) {
@@ -57,6 +69,5 @@ Behance.prototype.get = function (method, api, opts, done) {
         }
     )
 
-}
-;
+};
 module.exports = Behance;
