@@ -41,7 +41,7 @@ Behance.prototype.get = function () {
             throw  new Error(MESSAGES.API_NAME_NOT_GIVEN)
     }
 
-    var opt = _helpers.getOptions(_params, arguments[2]);
+    var opt = _helpers.getOptions(_params, arguments[1]);
     var done = opt.done;
     if (!done)
         throw  new Error(MESSAGES.NO_CALLBACK_DEFINED)
