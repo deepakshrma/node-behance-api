@@ -7,7 +7,7 @@ A utility wrapper for adobe behance services. This utility is developed for node
 Before starting development on node. You have to register your app on https://www.behance.net/dev/register. Register your app and get the client id from there.
 
 ###Prerequisites for node-behance-api
-*This utility wrapper uses request module.
+This utility wrapper uses request module.
 
 Requirement
 ------------
@@ -134,8 +134,8 @@ Behance.initOptions({
     }
 });
 ```
-###Error handling with *node-behance-api
-Error handling with this module is very easy. You can specify the menditory params with options. If the params value is true. It means it is manditory for given API's.
+###Error handling with node-behance-api
+Error handling with this module is very easy. You can specify the mandatory param with options. If the param value is true. It means it is mandatory for given API’s.
 ``` javascript
 "newapi": {
     "name": "newapis",
@@ -156,4 +156,4 @@ Error handling with this module is very easy. You can specify the menditory para
     }
 }
 ```
-Here param *"time" is manditory for newapi.
+Here param "time" is manditory for newapi.
