@@ -31,15 +31,18 @@ Here Behance.initOptions() is where you intialize node-behance-api. You can furt
 var Behance = require("node-behance-api");
 var behance = new Behance({"client_id": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxx"})
 Behance.initOptions();
-behance.get(Behance.APIS.GET_USER, { //or simply behance.get('user',
-    user:'deepakmshrma'
+behance.get({
+    api: Behance.APIS.GET_USER,
+    params: { //or simply behance.get('user',
+        user:'deepakmshrma'
 
+    }
 }, function (error, result) {
     if (error)
         console.log(error)
     else
         console.log(result)
-})
+});
 ```
 Here Behance.APIS.GET_USER, name of the API which you want to access. There are several API's available. You can find name of the API's in apiNameEnum.js. You can also pass simple string as api name here.
 
@@ -70,19 +73,19 @@ GET_WIP: "wip"
 ###Integration of another API's node-behance-api
 Currently this node-behance-api supports most of the behance api. But if future you can upgrade it with other list of API's.
 ``` javascript
-var Behance = require("node-behance-api"),
-    extend = require("extend");
-var behance = new Behance({"client_id": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxx"})
+var Behance = require('node-behance-api'),
+    extend = require('extend');
+var behance = new Behance({'client_id': 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxx'})
 Behance.initOptions({
     postProcess: function (options) {
         var newapis = {
-            "newapis": {
-                "name": "newapis",
-                "url": "users",
-                "params": {
-                    "client_id": true,
-                    "q": false,
-                    "sort": false
+            'newapis': {
+                'name': 'newapis',
+                'url': 'users',
+                'params': {
+                    'client_id': true,
+                    'q': false,
+                    'sort': false
                 }
             }
         }
@@ -90,17 +93,18 @@ Behance.initOptions({
         return options;
     }
 });
-behance.get({
-    api: 'newapis',
-    params: {
-        user: 'deepakmshrma'
-    }
-}, function (error, result) {
-    if (error)
-        console.log(error)
-    else
-        console.log(result)
-});
+behance
+    .get({
+        api: 'newapis',
+        params: {
+            user: 'deepakmshrma'
+        }
+    }, function (error, result) {
+        if (error)
+            console.log(error)
+        else
+            console.log(result)
+    });
 ```
 Here i have use https://www.npmjs.com/package/extend module to extend previous option with new api.
 
