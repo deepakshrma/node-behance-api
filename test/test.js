@@ -7,7 +7,7 @@ describe("Node Bahance: A simple lib for Adobe Behance API on node.js", function
     before(function () {
         Behance = require("./../index");
         Behance.initOptions();
-        behance = new Behance({"client_id": "8kTASYLumlKK5wAcP02A2Rmc2NFKcfyj"})//provide your client id
+        behance = new Behance({"client_id": "xxx"})//provide your client id
         if(behance.client_id == "xxx"){
             throw ("update your client id at line no:9");
         }
