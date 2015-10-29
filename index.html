@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title>Node Behance Api by deepakshrma</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="inner">
+        <h1>Node Behance Api</h1>
+        <h2>a utility for adobe behance services.</h2>
+        <a href="https://github.com/deepakshrma/node-behance-api" class="button"><small>View project on</small> GitHub</a>
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <h1>
+<a id="node-behance-api" class="anchor" href="#node-behance-api" aria-hidden="true"><span class="octicon octicon-link"></span></a>node-behance-api</h1>
+
+<p><img src="https://lh3.googleusercontent.com/-LhvnLJ399cM/VEeEVoEjoXI/AAAAAAAAAy8/EkHJZWtKkfM/w530-h207-no/behance-logo-grey.png" alt="alt text" title="node-behance-logo"></p>
+
+<p>A utility wrapper for adobe behance services. This utility is developed for nodejs only. Currently it supports most of the API's of Adobe Behance.</p>
+
+<p>Before starting development on node. You have to register your app on <a href="https://www.behance.net/dev/register">https://www.behance.net/dev/register</a>. Register your app and get the client id from there.</p>
+
+<h3>
+<a id="prerequisites-for-node-behance-api" class="anchor" href="#prerequisites-for-node-behance-api" aria-hidden="true"><span class="octicon octicon-link"></span></a>Prerequisites for node-behance-api</h3>
+
+<p>This utility wrapper uses request module.</p>
+
+<h2>
+<a id="requirement" class="anchor" href="#requirement" aria-hidden="true"><span class="octicon octicon-link"></span></a>Requirement</h2>
+
+<p>request - npm
+<a href="https://www.npmjs.org/package/request">https://www.npmjs.org/package/request</a></p>
+
+<h3>
+<a id="require-node-behance-api-to-your-nodejs-app" class="anchor" href="#require-node-behance-api-to-your-nodejs-app" aria-hidden="true"><span class="octicon octicon-link"></span></a>Require node-behance-api to your nodejs app</h3>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> Behance <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">"</span>node-behance-api<span class="pl-pds">"</span></span>);</pre></div>
+
+<h3>
+<a id="initialize-behance-module-with-your-client_id" class="anchor" href="#initialize-behance-module-with-your-client_id" aria-hidden="true"><span class="octicon octicon-link"></span></a>Initialize Behance module with your client_id</h3>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> behance <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">Behance</span>({<span class="pl-s"><span class="pl-pds">"</span>client_id<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>xxxxxxxxxxxxxxxxxxxxxxxxxxxxx<span class="pl-pds">"</span></span>})
+Behance.initOptions();</pre></div>
+
+<p>Here Behance.initOptions() is where you intialize node-behance-api. You can further integrate this module with currently added API. We will see example later on.</p>
+
+<h3>
+<a id="call-a-simple-api-lets-say-usersuser" class="anchor" href="#call-a-simple-api-lets-say-usersuser" aria-hidden="true"><span class="octicon octicon-link"></span></a>Call a simple api let's say users/{user}</h3>
+
+<h2>
+<a id="examples" class="anchor" href="#examples" aria-hidden="true"><span class="octicon octicon-link"></span></a>Examples:</h2>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> Behance <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">"</span>node-behance-api<span class="pl-pds">"</span></span>);
+<span class="pl-k">var</span> behance <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">Behance</span>({<span class="pl-s"><span class="pl-pds">"</span>client_id<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>xxxxxxxxxxxxxxxxxxxxxxxxxxxxx<span class="pl-pds">"</span></span>})
+Behance.initOptions();
+behance.get({
+    api<span class="pl-k">:</span> Behance.APIS.GET_USER,
+    params<span class="pl-k">:</span> { <span class="pl-c">//or simply behance.get('user',</span>
+        user<span class="pl-k">:</span><span class="pl-s"><span class="pl-pds">'</span>deepakmshrma<span class="pl-pds">'</span></span>
+
+    }
+}, <span class="pl-k">function</span> (<span class="pl-smi">error</span>, <span class="pl-smi">result</span>) {
+    <span class="pl-k">if</span> (error)
+        <span class="pl-en">console</span>.<span class="pl-c1">log</span>(error)
+    <span class="pl-k">else</span>
+        <span class="pl-en">console</span>.<span class="pl-c1">log</span>(result)
+});</pre></div>
+
+<p>Here Behance.APIS.GET_USER, name of the API which you want to access. There are several API's available. You can find name of the API's in apiNameEnum.js. You can also pass simple string as api name here.</p>
+
+<p>List of API's available right now:</p>
+
+<div class="highlight highlight-source-js"><pre>GET_USERS<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>users<span class="pl-pds">"</span></span>,
+GET_USER<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>user<span class="pl-pds">"</span></span>,
+GET_USER_PRODUCT<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>user_products<span class="pl-pds">"</span></span>,
+GET_USER_WIPS<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>user_wips<span class="pl-pds">"</span></span>,
+GET_USER_APR<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>user_appreciations<span class="pl-pds">"</span></span>,
+GET_USER_COLLECTIONS<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>user_collections<span class="pl-pds">"</span></span>,
+GET_USER_STATS<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>user_stats<span class="pl-pds">"</span></span>,
+GET_USER_FOLLOWERS<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>user_followers<span class="pl-pds">"</span></span>,
+GET_USER_FOLLOWEES<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>user_following<span class="pl-pds">"</span></span>,
+GET_USER_FEEDBACK<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>user_feedback<span class="pl-pds">"</span></span>,
+GET_USER_WORK_EXP<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>user_work_experience<span class="pl-pds">"</span></span>,
+GET_PRODUCTS<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>projects<span class="pl-pds">"</span></span>,
+GET_PRODUCT<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>project<span class="pl-pds">"</span></span>,
+GET_PRODUCT_COMMENTS<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>project_comments<span class="pl-pds">"</span></span>,
+GET_COLLECTIONS<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>collections<span class="pl-pds">"</span></span>,
+GET_COLLECTION<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>collection<span class="pl-pds">"</span></span>,
+GET_COLLECTION_PROJECTS<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>collection_projects<span class="pl-pds">"</span></span>,
+GET_WIPS<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>wips<span class="pl-pds">"</span></span>,
+GET_WIP_REVISION<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>wip_revision<span class="pl-pds">"</span></span>,
+GET_WIP_REVISION_COMMENTS<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>wip_revision_comments<span class="pl-pds">"</span></span>,
+GET_WIP<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>wip<span class="pl-pds">"</span></span></pre></div>
+
+<h3>
+<a id="integration-of-another-apis-node-behance-api" class="anchor" href="#integration-of-another-apis-node-behance-api" aria-hidden="true"><span class="octicon octicon-link"></span></a>Integration of another API's node-behance-api</h3>
+
+<p>Currently this node-behance-api supports most of the behance api. But if future you can upgrade it with other list of API's.</p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> Behance <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>node-behance-api<span class="pl-pds">'</span></span>),
+    extend <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>extend<span class="pl-pds">'</span></span>);
+<span class="pl-k">var</span> behance <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">Behance</span>({<span class="pl-s"><span class="pl-pds">'</span>client_id<span class="pl-pds">'</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>xxxxxxxxxxxxxxxxxxxxxxxxxxxxx<span class="pl-pds">'</span></span>})
+Behance.initOptions({
+    <span class="pl-en">postProcess</span><span class="pl-k">:</span> <span class="pl-k">function</span> (<span class="pl-smi">options</span>) {
+        <span class="pl-k">var</span> newapis <span class="pl-k">=</span> {
+            <span class="pl-s"><span class="pl-pds">'</span>newapis<span class="pl-pds">'</span></span><span class="pl-k">:</span> {
+                <span class="pl-s"><span class="pl-pds">'</span>name<span class="pl-pds">'</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>newapis<span class="pl-pds">'</span></span>,
+                <span class="pl-s"><span class="pl-pds">'</span>url<span class="pl-pds">'</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>users<span class="pl-pds">'</span></span>,
+                <span class="pl-s"><span class="pl-pds">'</span>params<span class="pl-pds">'</span></span><span class="pl-k">:</span> {
+                    <span class="pl-s"><span class="pl-pds">'</span>client_id<span class="pl-pds">'</span></span><span class="pl-k">:</span> <span class="pl-c1">true</span>,
+                    <span class="pl-s"><span class="pl-pds">'</span>q<span class="pl-pds">'</span></span><span class="pl-k">:</span> <span class="pl-c1">false</span>,
+                    <span class="pl-s"><span class="pl-pds">'</span>sort<span class="pl-pds">'</span></span><span class="pl-k">:</span> <span class="pl-c1">false</span>
+                }
+            }
+        }
+        options <span class="pl-k">=</span> extend(<span class="pl-c1">true</span>, {}, newapis, options);
+        <span class="pl-k">return</span> options;
+    }
+});
+behance
+    .get({
+        api<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>newapis<span class="pl-pds">'</span></span>,
+        params<span class="pl-k">:</span> {
+            user<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>deepakmshrma<span class="pl-pds">'</span></span>
+        }
+    }, <span class="pl-k">function</span> (<span class="pl-smi">error</span>, <span class="pl-smi">result</span>) {
+        <span class="pl-k">if</span> (error)
+            <span class="pl-en">console</span>.<span class="pl-c1">log</span>(error)
+        <span class="pl-k">else</span>
+            <span class="pl-en">console</span>.<span class="pl-c1">log</span>(result)
+    });</pre></div>
+
+<p>Here i have use <a href="https://www.npmjs.com/package/extend">https://www.npmjs.com/package/extend</a> module to extend previous option with new api.</p>
+
+<p>You can use this initOptions method to override the existing api. If you pass new api name same as defined one it will override the previous api.</p>
+
+<h4>
+<a id="example" class="anchor" href="#example" aria-hidden="true"><span class="octicon octicon-link"></span></a>Example:</h4>
+
+<div class="highlight highlight-source-js"><pre>Behance.initOptions({
+    <span class="pl-en">postProcess</span><span class="pl-k">:</span> <span class="pl-k">function</span> (<span class="pl-smi">options</span>) {
+        <span class="pl-k">var</span> newapis <span class="pl-k">=</span> {
+            <span class="pl-s"><span class="pl-pds">"</span>users<span class="pl-pds">"</span></span><span class="pl-k">:</span> {
+                <span class="pl-s"><span class="pl-pds">"</span>name<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>users<span class="pl-pds">"</span></span>,
+                <span class="pl-s"><span class="pl-pds">"</span>url<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>users<span class="pl-pds">"</span></span>,
+                <span class="pl-s"><span class="pl-pds">"</span>params<span class="pl-pds">"</span></span><span class="pl-k">:</span> {
+                    <span class="pl-s"><span class="pl-pds">"</span>client_id<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-c1">true</span>,
+                    <span class="pl-s"><span class="pl-pds">"</span>q<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-c1">false</span>,
+                    <span class="pl-s"><span class="pl-pds">"</span>sort<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-c1">false</span>,
+                    <span class="pl-s"><span class="pl-pds">"</span>time<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-c1">false</span>,
+                    <span class="pl-s"><span class="pl-pds">"</span>field<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-c1">false</span>,
+                    <span class="pl-s"><span class="pl-pds">"</span>country<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-c1">false</span>,
+                    <span class="pl-s"><span class="pl-pds">"</span>state<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-c1">false</span>,
+                    <span class="pl-s"><span class="pl-pds">"</span>city<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-c1">false</span>,
+                    <span class="pl-s"><span class="pl-pds">"</span>page<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-c1">false</span>,
+                    <span class="pl-s"><span class="pl-pds">"</span>tags<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-c1">false</span>,
+                    <span class="pl-s"><span class="pl-pds">"</span>color_hex<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-c1">false</span>,
+                    <span class="pl-s"><span class="pl-pds">"</span>color_range<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-c1">false</span>
+                }
+            }
+        }
+        options <span class="pl-k">=</span> extend(<span class="pl-c1">true</span>, {}, newapis, options);
+        <span class="pl-k">return</span> options;
+    }
+});</pre></div>
+
+<h3>
+<a id="error-handling-with-node-behance-api" class="anchor" href="#error-handling-with-node-behance-api" aria-hidden="true"><span class="octicon octicon-link"></span></a>Error handling with node-behance-api</h3>
+
+<p>Error handling with this module is very easy. You can specify the mandatory param with options. If the param value is true. It means it is mandatory for given API’s.</p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-s"><span class="pl-pds">"</span>newapi<span class="pl-pds">"</span></span><span class="pl-k">:</span> {
+    <span class="pl-s"><span class="pl-pds">"</span>name<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>newapis<span class="pl-pds">"</span></span>,
+    <span class="pl-s"><span class="pl-pds">"</span>url<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>users<span class="pl-pds">"</span></span>,
+    <span class="pl-s"><span class="pl-pds">"</span>params<span class="pl-pds">"</span></span><span class="pl-k">:</span> {
+        <span class="pl-s"><span class="pl-pds">"</span>client_id<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-c1">true</span>,
+        <span class="pl-s"><span class="pl-pds">"</span>q<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-c1">false</span>,
+        <span class="pl-s"><span class="pl-pds">"</span>sort<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-c1">false</span>,
+        <span class="pl-s"><span class="pl-pds">"</span>time<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-c1">true</span>,
+        <span class="pl-s"><span class="pl-pds">"</span>field<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-c1">false</span>,
+        <span class="pl-s"><span class="pl-pds">"</span>country<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-c1">false</span>,
+        <span class="pl-s"><span class="pl-pds">"</span>state<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-c1">false</span>,
+        <span class="pl-s"><span class="pl-pds">"</span>city<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-c1">false</span>,
+        <span class="pl-s"><span class="pl-pds">"</span>page<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-c1">false</span>,
+        <span class="pl-s"><span class="pl-pds">"</span>tags<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-c1">false</span>,
+        <span class="pl-s"><span class="pl-pds">"</span>color_hex<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-c1">false</span>,
+        <span class="pl-s"><span class="pl-pds">"</span>color_range<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-c1">false</span>
+    }
+}</pre></div>
+
+<p>Here param "time" is manditory for newapi.</p>
+        </section>
+
+        <aside id="sidebar">
+          <a href="https://github.com/deepakshrma/node-behance-api/zipball/master" class="button">
+            <small>Download</small>
+            .zip file
+          </a>
+          <a href="https://github.com/deepakshrma/node-behance-api/tarball/master" class="button">
+            <small>Download</small>
+            .tar.gz file
+          </a>
+
+          <p class="repo-owner"><a href="https://github.com/deepakshrma/node-behance-api"></a> is maintained by <a href="https://github.com/deepakshrma">deepakshrma</a>.</p>
+
+          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
+    </div>
+
+            <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-69481121-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+  </body>
+</html>
