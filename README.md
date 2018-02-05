@@ -160,4 +160,4 @@ Error handling with this module is very easy. You can specify the mandatory para
     }
 }
 ```
-Here param "time" is manditory for newapi.
+Here param "time" is mandatory for newapi.
